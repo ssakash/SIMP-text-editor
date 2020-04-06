@@ -16,14 +16,19 @@ class MainWindow(QMainWindow):
             e.ignore()
 
 app = QApplication([])
-app.setApplicationName("Text Editor")
+app.setApplicationName("SIMP Text Editor")
 text = QPlainTextEdit()
+text.setStyleSheet("color:purple;")
 window = MainWindow()
+#window.setStyleSheet("background-color: black;")
 window.setCentralWidget(text)
 
 file_path = None
 
 menu = window.menuBar().addMenu("&File")
+window.menuBar().setStyleSheet("""QMenuBar {
+             background-color: hotpink;
+        }""")
 open_action = QAction("&Open")
 def open_file():
     global file_path
